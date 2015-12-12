@@ -1,4 +1,5 @@
-<html><head>
+<html>
+<head>
 <title></title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <style type="text/css">
@@ -17,7 +18,7 @@ pre { color: #767676; background-color: #F7F7F7;}
 <p></p>
 <div><h1>Использование языка go</h1>
 
-<p>Примеры приложений на языке <a href="https://golang.org/">go</a></p>
+<p>Примеры приложений на языке <a href="https://golang.org">go</a></p>
 
 <h2>Установка программной среды</h2>
 
@@ -25,60 +26,7 @@ pre { color: #767676; background-color: #F7F7F7;}
 
 <p><a href="https://gist.github.com/LeKovr/385074a9e60dbd179192#file-go-install-sh">Пример установки для 64bit Linux</a></p>
 
-<script src="golang_files/385074a9e60dbd179192.js"></script><link rel="stylesheet" href="golang_files/embed-179f8d7577e3c8a38bde242aa0303acf0cac9244c22c15d77960e8.css"><div id="gist28865999" class="gist">
-    <div class="gist-file">
-      <div class="gist-data">
-        <div class="js-gist-file-update-container js-task-list-container file-box">
-  <div id="file-go-install-sh" class="file">
-    
-
-  <div class="blob-wrapper data type-shell">
-      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
-      <tbody><tr>
-        <td id="file-go-install-sh-L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="file-go-install-sh-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"># Link from https://golang.org/dl/</span></td>
-      </tr>
-      <tr>
-        <td id="file-go-install-sh-L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="file-go-install-sh-LC2" class="blob-code blob-code-inner js-file-line">wget https://storage.googleapis.com/golang/go1.5.2.linux-amd64.tar.gz</td>
-      </tr>
-      <tr>
-        <td id="file-go-install-sh-L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="file-go-install-sh-LC3" class="blob-code blob-code-inner js-file-line">tar -xzf go1.5.2.linux-amd64.tar.gz</td>
-      </tr>
-      <tr>
-        <td id="file-go-install-sh-L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="file-go-install-sh-LC4" class="blob-code blob-code-inner js-file-line">sudo mv go /usr/local/go-1.5.2</td>
-      </tr>
-      <tr>
-        <td id="file-go-install-sh-L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="file-go-install-sh-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">cd</span> /usr/local</td>
-      </tr>
-      <tr>
-        <td id="file-go-install-sh-L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="file-go-install-sh-LC6" class="blob-code blob-code-inner js-file-line">sudo ln -s go-1.5.2 go</td>
-      </tr>
-      <tr>
-        <td id="file-go-install-sh-L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="file-go-install-sh-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-k">for</span> <span class="pl-smi">b</span> <span class="pl-k">in</span> go godoc gofmt <span class="pl-k">;</span> <span class="pl-k">do</span> ln -s /usr/local/go/bin/<span class="pl-smi">$b</span> bin/<span class="pl-smi">$b</span> <span class="pl-k">;</span> <span class="pl-k">done</span></td>
-      </tr>
-</tbody></table>
-
-  </div>
-
-  </div>
-  
-</div>
-
-      </div>
-      <div class="gist-meta">
-        <a href="https://gist.github.com/LeKovr/385074a9e60dbd179192/raw/e7d33b59e90ba1bb7bd5a1f3c239d3f8c9cc3151/go-install.sh" style="float:right">view raw</a>
-        <a href="https://gist.github.com/LeKovr/385074a9e60dbd179192#file-go-install-sh">go-install.sh</a>
-        hosted with ❤ by <a href="https://github.com/">GitHub</a>
-      </div>
-    </div>
-</div>
-
+<script src="https://gist.github.com/LeKovr/385074a9e60dbd179192.js"></script>
 
 <p>Теперь для обновления версии go будет достаточно скачать и распаковать архив в /usr/local/go-VER и изменить ссылку /usr/local/go</p>
 
@@ -86,61 +34,8 @@ pre { color: #767676; background-color: #F7F7F7;}
 
 <p>Исходный код первого приложения есть на странице загрузки дистрибутива.
 Поместим его в <a href="https://gist.github.com/LeKovr/869fb8adef79d2fc64eb#file-main-go">main.go</a>:
-<script src="golang_files/869fb8adef79d2fc64eb.js"></script><link rel="stylesheet" href="golang_files/embed-179f8d7577e3c8a38bde242aa0303acf0cac9244c22c15d77960e8.css"></p><div id="gist28865040" class="gist">
-    <div class="gist-file">
-      <div class="gist-data">
-        <div class="js-gist-file-update-container js-task-list-container file-box">
-  <div id="file-main-go" class="file">
-    
-
-  <div class="blob-wrapper data type-go">
-      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
-      <tbody><tr>
-        <td id="file-main-go-L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="file-main-go-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">package</span> main</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="file-main-go-LC2" class="blob-code blob-code-inner js-file-line">    </td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="file-main-go-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">"</span>fmt<span class="pl-pds">"</span></span></td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="file-main-go-LC4" class="blob-code blob-code-inner js-file-line">    </td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="file-main-go-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-k">func</span> <span class="pl-en">main</span>() {</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="file-main-go-LC6" class="blob-code blob-code-inner js-file-line">  fmt.<span class="pl-c1">Printf</span>(<span class="pl-s"><span class="pl-pds">"</span>hello, world<span class="pl-cce">\n</span><span class="pl-pds">"</span></span>)</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="file-main-go-LC7" class="blob-code blob-code-inner js-file-line">}</td>
-      </tr>
-</tbody></table>
-
-  </div>
-
-  </div>
-  
-</div>
-
-      </div>
-      <div class="gist-meta">
-        <a href="https://gist.github.com/LeKovr/869fb8adef79d2fc64eb/raw/6129e577ffef0094d365e8cdfe292e2a39e5d6bc/main.go" style="float:right">view raw</a>
-        <a href="https://gist.github.com/LeKovr/869fb8adef79d2fc64eb#file-main-go">main.go</a>
-        hosted with ❤ by <a href="https://github.com/">GitHub</a>
-      </div>
-    </div>
-</div>
-
-и запустим<p></p>
+<script src="https://gist.github.com/LeKovr/869fb8adef79d2fc64eb.js"></script>
+и запустим</p>
 
 <pre><code>$ go run main.go
 hello, world
@@ -152,137 +47,10 @@ hello, world
 У него есть два <a href="http://go-macaron.com/docs/middlewares/templating">шаблонизатора</a>, мы выберем базовый - macaron.Renderer.</p>
 
 <p><a href="https://gist.githubusercontent.com/LeKovr/74a8288a4cdcde0b1df3/raw/7b485f1a7dd59c39ae58a548fb513bb8965c7279/main.go">main.go</a>:
-<script src="golang_files/7b485f1a7dd59c39ae58a548fb513bb8965c7279.js"></script><link rel="stylesheet" href="golang_files/embed-179f8d7577e3c8a38bde242aa0303acf0cac9244c22c15d77960e8.css"></p><div id="gist28865166" class="gist">
-    <div class="gist-file">
-      <div class="gist-data">
-        <div class="js-gist-file-update-container js-task-list-container file-box">
-  <div id="file-main-go" class="file">
-    
-
-  <div class="blob-wrapper data type-go">
-      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
-      <tbody><tr>
-        <td id="file-main-go-L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="file-main-go-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">package</span> main</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="file-main-go-LC2" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="file-main-go-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// Code from http://go-macaron.com/docs/middlewares/templating</span></td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="file-main-go-LC4" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="file-main-go-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">"</span>gopkg.in/macaron.v1<span class="pl-pds">"</span></span></td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="file-main-go-LC6" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="file-main-go-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-k">func</span> <span class="pl-en">main</span>() {</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L8" class="blob-num js-line-number" data-line-number="8"></td>
-        <td id="file-main-go-LC8" class="blob-code blob-code-inner js-file-line">  <span class="pl-smi">m</span> <span class="pl-k">:=</span> macaron.<span class="pl-c1">Classic</span>()</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L9" class="blob-num js-line-number" data-line-number="9"></td>
-        <td id="file-main-go-LC9" class="blob-code blob-code-inner js-file-line">  m.<span class="pl-c1">Use</span>(macaron.<span class="pl-c1">Renderer</span>())</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="file-main-go-LC10" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L11" class="blob-num js-line-number" data-line-number="11"></td>
-        <td id="file-main-go-LC11" class="blob-code blob-code-inner js-file-line">  m.<span class="pl-c1">Get</span>(<span class="pl-s"><span class="pl-pds">"</span>/<span class="pl-pds">"</span></span>, <span class="pl-c1">func</span>(ctx *macaron.<span class="pl-smi">Context</span>) {</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L12" class="blob-num js-line-number" data-line-number="12"></td>
-        <td id="file-main-go-LC12" class="blob-code blob-code-inner js-file-line">    ctx.<span class="pl-smi">Data</span>[<span class="pl-s"><span class="pl-pds">"</span>Name<span class="pl-pds">"</span></span>] = <span class="pl-s"><span class="pl-pds">"</span>jeremy<span class="pl-pds">"</span></span></td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L13" class="blob-num js-line-number" data-line-number="13"></td>
-        <td id="file-main-go-LC13" class="blob-code blob-code-inner js-file-line">    ctx.<span class="pl-c1">HTML</span>(<span class="pl-c1">200</span>, <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>) <span class="pl-c">// 200 is the response code.</span></td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L14" class="blob-num js-line-number" data-line-number="14"></td>
-        <td id="file-main-go-LC14" class="blob-code blob-code-inner js-file-line">  })</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L15" class="blob-num js-line-number" data-line-number="15"></td>
-        <td id="file-main-go-LC15" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L16" class="blob-num js-line-number" data-line-number="16"></td>
-        <td id="file-main-go-LC16" class="blob-code blob-code-inner js-file-line">  m.<span class="pl-c1">Run</span>()</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L17" class="blob-num js-line-number" data-line-number="17"></td>
-        <td id="file-main-go-LC17" class="blob-code blob-code-inner js-file-line">}</td>
-      </tr>
-</tbody></table>
-
-  </div>
-
-  </div>
-  
-</div>
-
-      </div>
-      <div class="gist-meta">
-        <a href="https://gist.github.com/LeKovr/74a8288a4cdcde0b1df3/raw/7b485f1a7dd59c39ae58a548fb513bb8965c7279/main.go" style="float:right">view raw</a>
-        <a href="https://gist.github.com/LeKovr/74a8288a4cdcde0b1df3#file-main-go">main.go</a>
-        hosted with ❤ by <a href="https://github.com/">GitHub</a>
-      </div>
-    </div>
-</div>
-<p></p>
+<script src="https://gist.github.com/LeKovr/74a8288a4cdcde0b1df3/7b485f1a7dd59c39ae58a548fb513bb8965c7279.js"></script></p>
 
 <p><a href="https://gist.github.com/LeKovr/85a8d17144b7c3bdc14a#file-hello-tmpl">templates/hello.tmpl</a>:
-<script src="golang_files/85a8d17144b7c3bdc14a.js"></script><link rel="stylesheet" href="golang_files/embed-179f8d7577e3c8a38bde242aa0303acf0cac9244c22c15d77960e8.css"></p><div id="gist28865297" class="gist">
-    <div class="gist-file">
-      <div class="gist-data">
-        <div class="js-gist-file-update-container js-task-list-container file-box">
-  <div id="file-hello-tmpl" class="file">
-    
-
-  <div class="blob-wrapper data type-text">
-      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
-      <tbody><tr>
-        <td id="file-hello-tmpl-L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="file-hello-tmpl-LC1" class="blob-code blob-code-inner js-file-line">&lt;h1&gt;Hello {{.Name}}&lt;/h1&gt;</td>
-      </tr>
-</tbody></table>
-
-  </div>
-
-  </div>
-  
-</div>
-
-      </div>
-      <div class="gist-meta">
-        <a href="https://gist.github.com/LeKovr/85a8d17144b7c3bdc14a/raw/cb65d44d0bde4c635a903eca071883c38ece08ce/hello.tmpl" style="float:right">view raw</a>
-        <a href="https://gist.github.com/LeKovr/85a8d17144b7c3bdc14a#file-hello-tmpl">hello.tmpl</a>
-        hosted with ❤ by <a href="https://github.com/">GitHub</a>
-      </div>
-    </div>
-</div>
-<p></p>
+<script src="https://gist.github.com/LeKovr/85a8d17144b7c3bdc14a.js"></script></p>
 
 <p>Установим Macaron:</p>
 
@@ -306,121 +74,7 @@ hello, world
 </code></pre>
 
 <p>И добавим пару строк в код main.go, он станет <a href="https://gist.github.com/LeKovr/74a8288a4cdcde0b1df3#file-main-go">таким</a>:
-<script src="golang_files/74a8288a4cdcde0b1df3.js"></script><link rel="stylesheet" href="golang_files/embed-179f8d7577e3c8a38bde242aa0303acf0cac9244c22c15d77960e8.css"></p><div id="gist28865166" class="gist">
-    <div class="gist-file">
-      <div class="gist-data">
-        <div class="js-gist-file-update-container js-task-list-container file-box">
-  <div id="file-main-go" class="file">
-    
-
-  <div class="blob-wrapper data type-go">
-      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
-      <tbody><tr>
-        <td id="file-main-go-L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="file-main-go-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">package</span> main</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="file-main-go-LC2" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="file-main-go-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// Code from http://go-macaron.com/docs/middlewares/templating</span></td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="file-main-go-LC4" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="file-main-go-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> (</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="file-main-go-LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">"</span>gopkg.in/macaron.v1<span class="pl-pds">"</span></span></td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="file-main-go-LC7" class="blob-code blob-code-inner js-file-line">  <span class="pl-s"><span class="pl-pds">"</span>github.com/skratchdot/open-golang/open<span class="pl-pds">"</span></span></td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L8" class="blob-num js-line-number" data-line-number="8"></td>
-        <td id="file-main-go-LC8" class="blob-code blob-code-inner js-file-line">)</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L9" class="blob-num js-line-number" data-line-number="9"></td>
-        <td id="file-main-go-LC9" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="file-main-go-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-k">func</span> <span class="pl-en">main</span>() {</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L11" class="blob-num js-line-number" data-line-number="11"></td>
-        <td id="file-main-go-LC11" class="blob-code blob-code-inner js-file-line">  <span class="pl-smi">m</span> <span class="pl-k">:=</span> macaron.<span class="pl-c1">Classic</span>()</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L12" class="blob-num js-line-number" data-line-number="12"></td>
-        <td id="file-main-go-LC12" class="blob-code blob-code-inner js-file-line">  m.<span class="pl-c1">Use</span>(macaron.<span class="pl-c1">Renderer</span>())</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L13" class="blob-num js-line-number" data-line-number="13"></td>
-        <td id="file-main-go-LC13" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L14" class="blob-num js-line-number" data-line-number="14"></td>
-        <td id="file-main-go-LC14" class="blob-code blob-code-inner js-file-line">  m.<span class="pl-c1">Get</span>(<span class="pl-s"><span class="pl-pds">"</span>/<span class="pl-pds">"</span></span>, <span class="pl-c1">func</span>(ctx *macaron.<span class="pl-smi">Context</span>) {</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L15" class="blob-num js-line-number" data-line-number="15"></td>
-        <td id="file-main-go-LC15" class="blob-code blob-code-inner js-file-line">    ctx.<span class="pl-smi">Data</span>[<span class="pl-s"><span class="pl-pds">"</span>Name<span class="pl-pds">"</span></span>] = <span class="pl-s"><span class="pl-pds">"</span>jeremy<span class="pl-pds">"</span></span></td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L16" class="blob-num js-line-number" data-line-number="16"></td>
-        <td id="file-main-go-LC16" class="blob-code blob-code-inner js-file-line">    ctx.<span class="pl-c1">HTML</span>(<span class="pl-c1">200</span>, <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>) <span class="pl-c">// 200 is the response code.</span></td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L17" class="blob-num js-line-number" data-line-number="17"></td>
-        <td id="file-main-go-LC17" class="blob-code blob-code-inner js-file-line">  })</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L18" class="blob-num js-line-number" data-line-number="18"></td>
-        <td id="file-main-go-LC18" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L19" class="blob-num js-line-number" data-line-number="19"></td>
-        <td id="file-main-go-LC19" class="blob-code blob-code-inner js-file-line">  open.<span class="pl-c1">Run</span>(<span class="pl-s"><span class="pl-pds">"</span>http://localhost:4000/<span class="pl-pds">"</span></span>)</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L20" class="blob-num js-line-number" data-line-number="20"></td>
-        <td id="file-main-go-LC20" class="blob-code blob-code-inner js-file-line">  m.<span class="pl-c1">Run</span>()</td>
-      </tr>
-      <tr>
-        <td id="file-main-go-L21" class="blob-num js-line-number" data-line-number="21"></td>
-        <td id="file-main-go-LC21" class="blob-code blob-code-inner js-file-line">}</td>
-      </tr>
-</tbody></table>
-
-  </div>
-
-  </div>
-  
-</div>
-
-      </div>
-      <div class="gist-meta">
-        <a href="https://gist.github.com/LeKovr/74a8288a4cdcde0b1df3/raw/da6083d1f56fb5ce7b30d95dc001a8f323c5e88c/main.go" style="float:right">view raw</a>
-        <a href="https://gist.github.com/LeKovr/74a8288a4cdcde0b1df3#file-main-go">main.go</a>
-        hosted with ❤ by <a href="https://github.com/">GitHub</a>
-      </div>
-    </div>
-</div>
-<p></p>
+<script src="https://gist.github.com/LeKovr/74a8288a4cdcde0b1df3.js"></script></p>
 
 <p>Запускаем</p>
 
@@ -435,10 +89,9 @@ hello, world
 
 <h2>Copyright &amp; License</h2>
 
-<p>Copyright © 2015 Alexey Kovrizhkin</p>
+<p>Copyright &copy; 2015 Alexey Kovrizhkin</p>
 
-<p>License: <a href="http://localhost:8081/view/LICENSE">CC0 1.0 Universal</a></p>
+<p>License: <a href="LICENSE">CC0 1.0 Universal</a></p>
 </div>
-
-
-</body></html>
+</body>
+</html>
