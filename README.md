@@ -6,19 +6,18 @@
 ## Установка программной среды
 
 Дистрибутив пока еще (версия 1.5.2) ставится из архива.
-Архив доступен тут - https://golang.org/doc/install
-Далее пример установки для 64bit Linux
+
+[Пример установки для 64bit Linux](https://gist.github.com/LeKovr/385074a9e60dbd179192#file-go-install-sh)
 
 <script src="https://gist.github.com/LeKovr/385074a9e60dbd179192.js"></script>
 
-Теперь для обновления версии go будет достаточно ее скачать в /usr/local/go-VER и изменить ссылку на /usr/local/go
+Теперь для обновления версии go будет достаточно скачать и распаковать архив в /usr/local/go-VER и изменить ссылку /usr/local/go
 
 ## Приложение 1. Hello World
 
 Исходный код первого приложения есть на странице загрузки дистрибутива.
-Поместим его в main.go:
-<script src="https://gist.github.com/LeKovr/869fb8adef79d2fc64eb"></script>
-
+Поместим его в [main.go](https://gist.github.com/LeKovr/869fb8adef79d2fc64eb#file-main-go):
+<script src="https://gist.github.com/LeKovr/869fb8adef79d2fc64eb.js"></script>
 и запустим
 ```
 $ go run main.go
@@ -27,12 +26,13 @@ hello, world
 
 ## Приложение 2. Web
 
-Для веб-приложения будем использовать фреймворк Macaron - http://go-macaron.com/docs.
-У него есть два шаблонизатора (см http://go-macaron.com/docs/middlewares/templating), мы выберем базовый - macaron.Renderer.
+Для веб-приложения будем использовать фреймворк [Macaron](http://go-macaron.com/docs).
+У него есть два [шаблонизатора](http://go-macaron.com/docs/middlewares/templating), мы выберем базовый - macaron.Renderer.
 
+[main.go](https://gist.githubusercontent.com/LeKovr/74a8288a4cdcde0b1df3/raw/7b485f1a7dd59c39ae58a548fb513bb8965c7279/main.go):
 <script src="https://gist.github.com/LeKovr/74a8288a4cdcde0b1df3/7b485f1a7dd59c39ae58a548fb513bb8965c7279.js"></script>
 
-templates/hello.tmpl:
+[templates/hello.tmpl](https://gist.github.com/LeKovr/85a8d17144b7c3bdc14a#file-hello-tmpl):
 <script src="https://gist.github.com/LeKovr/85a8d17144b7c3bdc14a.js"></script>
 
 Установим Macaron:
@@ -53,7 +53,7 @@ $ go run main.go
 ```
 $ go get github.com/skratchdot/open-golang/open
 ```
-И добавим пару строк в код, он станет таким:
+И добавим пару строк в код main.go, он станет [таким](https://gist.github.com/LeKovr/74a8288a4cdcde0b1df3#file-main-go):
 <script src="https://gist.github.com/LeKovr/74a8288a4cdcde0b1df3.js"></script>
 
 Запускаем
@@ -70,4 +70,4 @@ $ go run main.go
 
 Copyright (c) 2015 Alexey Kovrizhkin
 
-License: CC0 1.0 Universal, see [LICENSE]
+License: [CC0 1.0 Universal](LICENSE)
